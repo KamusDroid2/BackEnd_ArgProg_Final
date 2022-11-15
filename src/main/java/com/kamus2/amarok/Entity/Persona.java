@@ -23,9 +23,10 @@ public class Persona {
     @Size(min=1, max=45, message="Error")
     private String surname;
     @NotNull
-    @Size(min=1, max=300, message="Error")
+    @Size(min=1, max=255, message="Error")
     private String description;
     @NotNull
+    @Size(min=1, max=255, message="Error")
     private String img;
 
     public Persona() {
