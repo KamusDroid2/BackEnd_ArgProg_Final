@@ -9,16 +9,13 @@ import javax.validation.constraints.Size;
 
 
 @Entity
-public class Persona {
+public class Projects {
     @Id
-    @GeneratedValue(strategy =GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @NotNull
     @Size(min=1, max=45, message="Error")
-    private String name;
-    @NotNull
-    @Size(min=1, max=45, message="Error")
-    private String surname;
+    private String project;
     @NotNull
     @Size(min=1, max=255, message="Error")
     private String description;
@@ -26,17 +23,16 @@ public class Persona {
     @Size(min=1, max=255, message="Error")
     private String img;
 
-    public Persona() {
+    public Projects() {
     }
 
-    public Persona(String name, String surname, String description, String img) {
-        this.name = name;
-        this.surname = surname;
+    public Projects(String project, String description, String img) {
+        this.project = project;
         this.description = description;
         this.img = img;
     }
 
-    public Persona(String name, String description) {
+    public Projects(String project, String description) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -48,20 +44,12 @@ public class Persona {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getProject() {
+        return project;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setProject(String project) {
+        this.project = project;
     }
 
     public String getDescription() {
@@ -80,7 +68,4 @@ public class Persona {
         this.img = img;
     }
 
-    
-       
-    
 }
