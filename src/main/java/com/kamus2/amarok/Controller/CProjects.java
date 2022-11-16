@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@CrossOrigin(origins = "https://frontamarok.web.app")
+@CrossOrigin(origins = "https://frontamarok2.web.app")
 @RequestMapping("/projects")
 public class CProjects {
     @Autowired
@@ -62,7 +62,7 @@ public class CProjects {
         }
         
         Projects projects = new Projects(
-                dtoprojects.getProject(), dtoprojects.getDescription()
+                dtoprojects.getProject(), dtoprojects.getDescription(), dtoprojects.getImg()
             );
         sProjects.save(projects);
         return new ResponseEntity(new Mensaje("Proyecto creado"), HttpStatus.OK);
